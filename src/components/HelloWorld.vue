@@ -1,40 +1,34 @@
 <script setup>
 import { ref } from 'vue'
 
-defineProps({
-  msg: String,
-})
-
+const msg=ref("和声音乐后台")
 const count = ref(0)
+const hi=()=>{
+  msg.value = "已请求"
+}
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 
-  <div class="card">
-    <button type="button" @click="count++">count is {{ count }}</button>
-    <p>
-      Edit
-      <code>components/HelloWorld.vue</code> to test HMR
-    </p>
+  <div class="button-container">
+    <button type="button" @click="count++">点击次数{{ count }}</button>
+      <button type="button" @click="hi">请求接口{{ count }}</button>
   </div>
 
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+
 </template>
+
+
 
 <style scoped>
 .read-the-docs {
   color: #888;
+}
+
+.button-container{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
 }
 </style>
